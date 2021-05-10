@@ -15,6 +15,8 @@ Rails app with GraphQL API
 
 * bundle add graphql
 
+* bundle install
+
 * rails generate graphql:install
 
 * rails server
