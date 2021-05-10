@@ -1,25 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails app with GraphQL API
 
-Things you may want to cover:
 
-* Ruby version
+## System dependencies
 
-* System dependencies
+* ruby -v : ruby 3.0.1
 
-* Configuration
+* rails -v : Rails 6.1.3.1
 
-* Database creation
+* rails new blog-app -d mysql -T  
 
-* Database initialization
+* rails db:create db:migrate db:seed
 
-* How to run the test suite
+* bundle add graphql
 
-* Services (job queues, cache servers, search engines, etc.)
+* rails generate graphql:install
 
-* Deployment instructions
+* rails server
 
-* ...
-# blog-app
+* rails g graphql:object user
+
+* rails g graphql:object post
+
+* rails g graphql:object comment
+
+* rails g graphql:object reaction
