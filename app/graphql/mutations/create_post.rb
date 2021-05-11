@@ -10,11 +10,11 @@ class Mutations::CreatePost < Mutations::BaseMutation
  field :errors, [String], null: false
 
  def resolve(title:, description:, body:, user_id:)
-   post = Post.new(
+   user = User.find user_id
+   post = user.posts.new(
      title: title,
      description: description,
-     body: body,
-     user_id: user_id)
+     body: body)
 
      if post.save
        {
