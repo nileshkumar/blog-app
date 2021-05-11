@@ -1,7 +1,13 @@
 FactoryBot.define do
   factory :user do
-    sequence(:name) { |n| "Tom Jerry (#{n})" }
-    sequence(:email) { |n| "tom-jerry(#{n}).com"}
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
   end
 
+  factory :post do
+    user
+    title {Faker::Books::Dune.title}
+    description {Faker::Lorem.paragraph(sentence_count: 2)}
+    body {Faker::Lorem.paragraphs}
+  end
 end
