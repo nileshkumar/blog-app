@@ -11,8 +11,8 @@ class Mutations::CreateComment < Mutations::BaseMutation
 
   # def resolve(comment:, user_id:, post_id:, reaction: )
   def resolve(comment:, user_id:, post_id:)
-    comment = Comment.new(
-        post_id: post_id,
+    post = Post.find post_id
+    comment = post.comments.new(
         comment: comment,
         user_id: user_id
     )
