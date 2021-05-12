@@ -1,7 +1,9 @@
 module Types
   class QueryType < Types::BaseObject
     field :users, [Types::UserType], null: true
-    field :posts, [Types::PostType], null: true
+    field :posts, [Types::PostType], null: true do
+      argument :user_id, Integer, required: true
+    end
     field :user, Types::UserType, null: false do
       argument :id, ID, required: true
     end
@@ -13,8 +15,9 @@ module Types
       User.all
     end
 
-    def posts
-      Post.all
+    def posts(user_id:)
+      user = User.find user_id
+      user.posts
     end
 
     def user(id:)
