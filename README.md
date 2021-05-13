@@ -21,6 +21,8 @@ Rails app with GraphQL API
 
 * rails server
 
+* open the browser and run http://localhost:3000/graphql
+
 * rails g graphql:object user
 
 * rails g graphql:object post
